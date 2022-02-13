@@ -21,6 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/produtos/novo', 'ProdutosController@create');
+Route::get('/produtos/novo', 'App\Http\Controllers\ProdutosController@create');
+Route::post('/produtos/novo', 'App\Http\Controllers\ProdutosController@store')->name('registrar_produto');
+
 
 require __DIR__.'/auth.php';
