@@ -24,7 +24,8 @@ Route::get('/dashboard', function () {
 Route::get('/produtos/novo', 'App\Http\Controllers\ProdutosController@create');
 Route::post('/produtos/novo', 'App\Http\Controllers\ProdutosController@store')->name('registrar_produto');
 Route::get('/produtos/ver/{id}', 'App\Http\Controllers\ProdutosController@show');
-Route::get('/produtos/editar/id', 'App\Http\Controllers\ProdutosController@create');
+Route::get('/produtos/editar/{id}', 'App\Http\Controllers\ProdutosController@edit');
+Route::post('/produtos/editar/{id}', 'App\Http\Controllers\ProdutosController@update')->name('alterar_produto');
 
 
 require __DIR__.'/auth.php';
