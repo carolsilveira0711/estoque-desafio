@@ -22,4 +22,10 @@ class ProdutosController extends Controller
 
         return "Produto registrado!";
     }
+
+    public function show($id)
+    {
+        $produto = Produto::findOrFail($id);
+        return view('produtos.show', ['produto' => $produto]);
+    }
 }
